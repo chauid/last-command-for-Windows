@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 > nul
 title last command for Windows Installer
 bcdedit > nul
 if %errorlevel% EQU 1 goto noadmin
@@ -327,22 +328,22 @@ certutil /decode tmp.file result.cmd>nul
 del tmp.file
 echo Installing[3/3] - Copy to System Folder.
 set target_folder=C:\Windows\System32\last.cmd
-rem ============ °æ·Î ¹®Á¦ ¼öÁ¤
+rem ============ ê²½ë¡œ ë¬¸ì œ ìˆ˜ì •
 set current_file=%~dp0result.cmd
 move /Y "%current_file%" "%target_folder%">nul
 echo Install Done.
-echo last command for Windows¸¦ ´Ù¿î¹Þ¾ÆÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.>> HowToUse_last_Command_On_WindowsOS.txt
+echo last command for Windowsë¥¼ ë‹¤ìš´ë°›ì•„ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.>> HowToUse_last_Command_On_WindowsOS.txt
 echo.>> HowToUse_last_Command_On_WindowsOS.txt
-echo [»ç¿ë¹ý]>> HowToUse_last_Command_On_WindowsOS.txt
-echo cmd.exe ½ÇÇà>> HowToUse_last_Command_On_WindowsOS.txt
-echo "last -V" Ä¿¸Çµå ÀÔ·ÂÀ¸·Î Á¤»ó ¼³Ä¡ È®ÀÎ>> HowToUse_last_Command_On_WindowsOS.txt
-echo "last -h" Ä¿¸Çµå ÀÔ·ÂÀ¸·Î »ç¿ë¹ýÀ» È®ÀÎÇÏ¼¼¿ä.>> HowToUse_last_Command_On_WindowsOS.txt
+echo [ì‚¬ìš©ë²•]>> HowToUse_last_Command_On_WindowsOS.txt
+echo cmd.exe ì‹¤í–‰>> HowToUse_last_Command_On_WindowsOS.txt
+echo "last -V" ì»¤ë§¨ë“œ ìž…ë ¥ìœ¼ë¡œ ì •ìƒ ì„¤ì¹˜ í™•ì¸>> HowToUse_last_Command_On_WindowsOS.txt
+echo "last -h" ì»¤ë§¨ë“œ ìž…ë ¥ìœ¼ë¡œ ì‚¬ìš©ë²•ì„ í™•ì¸í•˜ì„¸ìš”.>> HowToUse_last_Command_On_WindowsOS.txt
 start notepad HowToUse_last_Command_On_WindowsOS.txt
 timeout /t 1 >nul
 del HowToUse_last_Command_On_WindowsOS.txt
 timeout /t 3 >nul
 exit
 :noadmin
-echo °ü¸®ÀÚ ±ÇÇÑÀ¸·Î ½ÇÇàÇØÁÖ¼¼¿ä. 
+echo ê´€ë¦¬ìž ê¶Œí•œìœ¼ë¡œ ì‹¤í–‰í•´ì£¼ì„¸ìš”. 
 pause > nul
 exit

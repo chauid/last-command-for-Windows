@@ -1,6 +1,6 @@
 @echo off
 :base64
-certutil /encode last.cmd temp.txt
+certutil /encode last_dev.cmd temp.txt
 for /f "tokens=*" %%i in (temp.txt) do echo echo %%i^>^>tmp.file>>copybase64.txt
 start notepad copybase64.txt
 timeout /t 1 >nul
