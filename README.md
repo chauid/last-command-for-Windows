@@ -48,7 +48,7 @@ e.g.
 ```cmd
 last --on -O:D
 or
-last --on -order:D
+last --on --order:D
 ```
 
 ## License
