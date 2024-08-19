@@ -8,7 +8,7 @@ Windows EventLog 기반 로그온/오프 기록 표시
 > line break: CSLF  
 
 > [!WARNING]
-> _batch command로 작성되었기 때문에 이벤트 로그의 양에 비례하여 속도가 느려집니다._  
+> _이벤트 로그의 양에 비례하여 속도가 느려집니다.(모든 이벤트 로그를 순회하는 문제)_  
 > ~~이벤트 로그를 지우면 빨라진다!~~
 
 ## Installation
@@ -31,6 +31,8 @@ Options:
   -O               날짜/시간순으로 정렬 [기본값: -O:A]
      --order:D     D  내림차순(가장 최신 항목부터)
      --order:A     A  오름차순(가장 오래된 항목부터)
+     --head:[num]  앞에서 [num]만큼 출력
+     --tail:[num]  뒤에서 [num]만큼 출력
   -V --version     버전 확인
   -h --help        도움말 표시(현재 창 표시)
 ```
