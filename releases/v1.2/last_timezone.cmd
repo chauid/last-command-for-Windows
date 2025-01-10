@@ -313,9 +313,9 @@ if "!logoff_log[%index%]:~8,1!"=="0" (
    set /A logoff_log[%index%].day=!logoff_log[%index%]:~8,2!
 )
 if "!logoff_log[%index%]:~11,1!"=="0" (
-   set /A logoff_log[%index%].hour=!logoff_log[%index%]:~12,1!
+   set /A logoff_log[%index%].hour=!logoff_log[%index%]:~12,1!+9
 ) else (
-   set /A logoff_log[%index%].hour=!logoff_log[%index%]:~11,2!
+   set /A logoff_log[%index%].hour=!logoff_log[%index%]:~11,2!+9
 )
 :: TimeZone에 의한 시간값 보정.
 if !logoff_log[%index%].hour! GEQ 24 (
@@ -391,9 +391,9 @@ if "!logon_log[%index%]:~8,1!"=="0" (
    set /A logon_log[%index%].day=!logon_log[%index%]:~8,2!
 )
 if "!logon_log[%index%]:~11,1!"=="0" (
-   set /A logon_log[%index%].hour=!logon_log[%index%]:~12,1!
+   set /A logon_log[%index%].hour=!logon_log[%index%]:~12,1!+9
 ) else (
-   set /A logon_log[%index%].hour=!logon_log[%index%]:~11,2!
+   set /A logon_log[%index%].hour=!logon_log[%index%]:~11,2!+9
 )
 :: TimeZone에 의한 시간값 보정.
 if !logon_log[%index%].hour! GEQ 24 (
@@ -727,7 +727,7 @@ echo   -V --version     버전 확인
 echo   -h --help        도움말 표시(현재 창 표시)
 goto end
 :version_print
-echo last command for Windows v1.2
+echo last command for Windows v1.1
 goto end
 :no_log
 echo 로그온/오프 기록이 없습니다. 자세한 이벤트 목록을 확인하기 위해 이벤트 뷰어를 참조하세요.
