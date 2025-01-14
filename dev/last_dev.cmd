@@ -9,6 +9,7 @@ set orderby=asc
 set /A head=0
 set /A tail=0
 :: 명령어 구문 확인
+:: 옵션구문 처리 스코프 추가 필요 call->goto :eof
 set param1=%1
 set param2=%2
 set param3=%3
